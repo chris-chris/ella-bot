@@ -1,28 +1,21 @@
 {
-  "name": "botbuilder-sample-state",
+  "name": "hello-chatconnector",
   "version": "1.0.0",
-  "description": "Bot Builder Sample - State",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "azure-publish": "node publish.js"
   },
-  "author": "Microsoft Corp.",
-  "license": "MIT",
-  "keywords": [
-    "botbuilder",
-    "bots",
-    "chatbots",
-    "botbuilder-samples"
-  ],
-  "bugs": {
-    "url": "https://github.com/Microsoft/BotBuilder-Samples/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Microsoft/BotBuilder-Samples.git"
-  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "botbuilder": "^3.13.1",
-    "dotenv-extended": "^1.0.4",
-    "restify": "^4.3.0"
+    "botbuilder-azure": "^3.0.4",
+    "restify": "^5.0.0"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "zip-folder": "^1.0.0"
   }
 }
