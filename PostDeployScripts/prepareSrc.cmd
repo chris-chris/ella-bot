@@ -1,6 +1,5 @@
 rem @echo off
 setlocal
-SET password=%1
 SET repoName=srcRepo
 SET repoUrl=file:///%HOMEDRIVE:~0,1%/%HOMEPATH:~1%/site/%repoName%
 SET download=bot-src
@@ -39,11 +38,8 @@ cd %download%
 call rm -r -f .git
 popd
 
-rem prepare for publish
-type PostDeployScripts\publish.js.template | sed -e s/\{WEB_SITE_NAME\}/%WEBSITE_SITE_NAME%/g | sed -e s/\{PASSWORD\}/%password%/g > %HOME%\site\%download%\publish.js
-
 rem preare the zip file
-%HOMEDRIVE%\7zip\7za a %HOME%\site\%download%.zip %HOME%\site\%download%\*
+%HOMEDRIVE%\7zip\7za a %HOME%\site\%download%.zip %HOME%\site\%download%
 
 rem cleanup git stuff
 pushd ..\wwwroot
@@ -54,5 +50,3 @@ pushd %HOME%\site
 call rm -r -f %download%
 call rm -r -f %repoName%
 popd
-
-endlocal
